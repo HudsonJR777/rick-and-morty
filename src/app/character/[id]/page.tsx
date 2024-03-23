@@ -85,7 +85,7 @@ export default async function CharacterId({ params }: any) {
         <div className="pt-[100px] pb-[90px] xl4:pt-[322px] xl4:pb-[318px]">
           <div className=" flex px-[228px]">
             <div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl1:grid-cols-5
+              className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl1:grid-cols-5
              justify-between gap-[80px] xl4:gap-[229.18px] "
             >
               {infoscharacters.map((character) => (
