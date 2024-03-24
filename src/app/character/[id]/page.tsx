@@ -60,23 +60,25 @@ export default async function CharacterId({ params }: any) {
   return (
     <div className="w-full overflow-x-hidden">
       <div>
-        <div className="flex justify-end  flex-wrap sm:flex-nowrap ">
-          <div className="bg-[#404040] w-full h-[150px] xl4:h-[242px] flex gap-3 py-[24px] px-[28px] sm:items-center flex-col sm:flex-row   sm:px-[80px]  ">
-            <Link href="/" className="flex-shrink-0">
-              <Image
-                src={Arrow}
-                alt="voltar para home"
-                width={40}
-                height={40}
-              />
-            </Link>
-            <h1 className="font-bold text-[30px] xl4:text-[60px]  text-white  sm:px-[100px]">
-              {data.name}
-            </h1>
+        <div className=" relative">
+          <div className="bg-[#404040] w-full h-[150px] xl4:h-[242px] flex items-center justify-center   ">
+            <div className="w-full  container flex items-center gap-8 ">
+              <Link href="/" className="flex-shrink-0">
+                <Image
+                  src={Arrow}
+                  alt="voltar para home"
+                  width={40}
+                  height={40}
+                />
+              </Link>
+              <h1 className="font-bold text-[30px] xl4:text-[60px]  text-white  sm:px-[100px]">
+                {data.name}
+              </h1>
+            </div>
           </div>
-          <div>
+          <div className="md:absolute right-0 top-0">
             <Image
-              className="bg-green-800 w-screen sm:w-[300px] h-[240px] xl4:w-[653px] xl4:h-[484px] object-cover"
+              className="bg-green-800 w-screen md:w-[300px] h-[240px] xl4:w-[653px] xl4:h-[484px] object-cover"
               src={data.image}
               width={600}
               height={484}
@@ -87,11 +89,11 @@ export default async function CharacterId({ params }: any) {
       </div>
 
       <div>
-        <div className="pt-[100px] pb-[90px] xl4:pt-[322px] xl4:pb-[318px]">
-          <div className=" flex px-[228px]">
+        <div className="pt-[100px] md:pt-[200px] pb-[90px] xl4:pt-[322px] xl4:pb-[318px]">
+          <div className=" flex container">
             <div
               className="grid grid-cols-1   sm:grid-cols-5
-             justify-between gap-[80px] xl4:gap-[229.18px] "
+             justify-between gap-[80px] xl4:gap-[229.18px] mx-auto "
             >
               {infoscharacters.map((character) => (
                 <InfosCharacter key={character.label} character={character} />

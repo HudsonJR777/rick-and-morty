@@ -14,15 +14,15 @@ export default function Input() {
   }
 
   return (
-    <div className="relative  px-[120px] xl4:px-[120px] pt-8 pb-0 xl4:py-[10px] ">
-      <div className="">
+    <div>
+      <div className="flex items-center justify-between gap-4  w-full h-[28px] border border-solid-[5px] border-black focus:outline-none focus:border-[#CFE071] rounded-[10px] px-5 py-5 ">
         <input
           onChange={(event) => setSearch(event.target.value)}
           type="text"
-          className="px-[40px] pt-[21px] pb-[20px] w-[450px] h-[28px] xl4:w-[573px] border border-solid-[5px] border-black focus:outline-none focus:border-[#CFE071] rounded-[10px] placeholder-[#474747]"
+          className="placeholder-[#474747] w-full outline-none"
           placeholder="Buscar Personagem"
         />
-        <div className="absolute inset-y-0 left-[500px] xl4:left-[720px] flex items-center pl-3 top-8">
+        <div className="flex-shrink-0 ">
           <Image
             onClick={handleSearch}
             src={Search}

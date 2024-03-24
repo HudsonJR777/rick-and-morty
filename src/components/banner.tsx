@@ -6,11 +6,11 @@ export default function Banner() {
         backgroundImage: `url(https://i.imgur.com/78LO4y9.png)`,
       }}
     >
-      <div className="flex flex-col gap-6 px-[170px]   xl4:px-[228px] xl4:py-[228px]">
+      <div className="flex flex-col gap-6 container">
         <h1 className=" text-[60px]  xl4:text-[60px] xl4:w-[650px]  text-white font-bold w-full">
           Filtro de personagens
         </h1>
-        <p className="w-[600px] xl3:w-[500px] xl4:w-[722px] sm:font-normal  xl4:font-bold font-bold text-white text-[14px] sm:text-[24px] xl4:text-[32px]">
+        <p className="w-full md:w-[600px] xl3:w-[500px] xl4:w-[722px] sm:font-normal  xl4:font-bold font-bold text-white text-[14px] sm:text-[24px] xl4:text-[32px]">
           Confira os principais dados dos personagens de Rick and Morty, como
           seu nome, seu status e muito mais abaixo!
         </p>

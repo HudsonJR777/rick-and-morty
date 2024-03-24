@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Input from "@/components/input";
 import Link from "next/link";
 import { CharacterProps } from "@/types/character";
 
@@ -14,7 +13,7 @@ export default function Card({ character }: ICardProps) {
         <Image
           className="w-full h-[200px] xl4:320 object-cover bg-no-repeat"
           src={character.image}
-          alt="Personagem"
+          alt={character.name}
           width={280}
           height={200}
         />
