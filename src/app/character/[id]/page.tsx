@@ -106,7 +106,11 @@ export default async function CharacterId({ params }: any) {
             othersCharacters.results
               .slice(0, 3)
               .map((character: CharacterProps) => (
-                <Card character={character} href="character" />
+                <Card
+                  key={character.id}
+                  character={character}
+                  href="character"
+                />
               ))}
         </div>
       </div>
