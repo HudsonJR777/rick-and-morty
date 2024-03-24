@@ -4,9 +4,10 @@ import { CharacterProps } from "@/types/character";
 
 interface ICardProps {
   character: CharacterProps;
+  href: string;
 }
 
-export default function Card({ character }: ICardProps) {
+export default function Card({ character, href }: ICardProps) {
   return (
     <div className="w-[320px] h-[300px] grid-cols-4 xl3:grid-cols-2 mb-[90px]  cursor-pointer rounded-md bg-[#F5F5F5] ">
       <div className="flex flex-col rounded-lg  group h-[100px] bg-[#F5F5F5] ">
@@ -51,7 +52,7 @@ export default function Card({ character }: ICardProps) {
           </div>
           <Link
             className="bg-[#33B4C4] text-white rounded-[40px] text-[18px] mb-[40px] px-7 mx-auto invisible group-hover:visible"
-            href={`character/${character.id}`}
+            href={`/${href}/${character.id}`}
           >
             Ver mais sobre
           </Link>

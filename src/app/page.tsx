@@ -34,7 +34,6 @@ export default function Home() {
       .get(`https://rickandmortyapi.com/api/character/?name=${search}`)
       .then((results) => {
         setCharacters(results.data.results);
-        console.log(results.data.info.pages);
         setTotalPage(results.data.info.pages);
         setCount(1);
       })
@@ -62,7 +61,7 @@ export default function Home() {
       <div className="mt-10 xl1:grid xl1:grid-cols-4 flex justify-items-center justify-center flex-wrap gap-[40px] px-0 container ">
         {characters.length > 0 &&
           characters.map((item: CharacterProps) => (
-            <Card key={item.id} character={item} />
+            <Card key={item.id} character={item} href="character" />
           ))}
       </div>
 

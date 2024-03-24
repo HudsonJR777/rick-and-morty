@@ -11,11 +11,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { CharacterProps } from "../../../types/character";
 import { InfosCharacter } from "@/components/infos-character";
+import Card from "@/components/cards";
 
 export default async function CharacterId({ params }: any) {
   const id = params.id;
   const res = await fetch(`https:rickandmortyapi.com/api/character/${id}`);
   const data: CharacterProps = await res.json();
+
+  const responseOthersCharacters = await fetch(
+    `https:rickandmortyapi.com/api/character/?species=${data.species}`
+  );
+  const othersCharacters = await responseOthersCharacters.json();
 
   const infoscharacters = [
     {
@@ -45,20 +51,8 @@ export default async function CharacterId({ params }: any) {
     },
   ];
 
-  // console.log(data);
-
-  //   async function loadCharacter() {
-  //     const res = await fetch("https:rickandmortyapi.com/api/character/1");
-  //     const data = await res.json();
-  //     console.log(data);
-  //   }
-
-  //   useEffect(() => {
-  //     loadCharacter();
-  //   }, []);
-
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-hidden">
       <div>
         <div className=" relative">
           <div className="bg-[#404040] w-full h-[150px] xl4:h-[242px] flex items-center justify-center   ">
@@ -103,13 +97,19 @@ export default async function CharacterId({ params }: any) {
         </div>
       </div>
 
-      <div>
-        <h1 className="font-bold text-[28px] sm:text-[40px] text-[#404040] px-[28px] sm:px-[228px] sm:pb-[60px] ">
-          Outros Personagems
-        </h1>
+      <div className="w-full container pb-10">
+        <h2 className="font-bold text-[28px] sm:text-[40px] text-[#404040] mb-10">
+          Outros Personagens
+        </h2>
+        <div className="flex items-center justify-center xl:justify-between flex-wrap gap-[40px]">
+          {othersCharacters.results.length > 0 &&
+            othersCharacters.results
+              .slice(0, 3)
+              .map((character: CharacterProps) => (
+                <Card character={character} href="character" />
+              ))}
+        </div>
       </div>
-
-      <div></div>
     </div>
   );
 }

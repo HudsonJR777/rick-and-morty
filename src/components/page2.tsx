@@ -115,7 +115,7 @@ export default function Page2() {
       </div>
 
       <div>
-        <h1 className="font-bold text-[40px] text-[#404040] px-[228px] pb-[60px]">
+        <h1 className="font-bold text-[40px] text-[#404040] container">
           Outros Personagems
         </h1>
       </div>
