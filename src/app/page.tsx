@@ -36,6 +36,7 @@ export default function Home() {
         setCharacters(results.data.results);
         console.log(results.data.info.pages);
         setTotalPage(results.data.info.pages);
+        setCount(1);
       })
       .catch((error) => console.log("Ocorreu um erro", error));
   }
