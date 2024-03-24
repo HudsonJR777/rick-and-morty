@@ -1,12 +1,16 @@
 "use client";
-import { useState } from "react";
 
 interface IPaginationProps {
   count: number;
+  totalPage: number;
   setCount: (value: number) => void;
 }
 
-export default function Pagination({ count, setCount }: IPaginationProps) {
+export default function Pagination({
+  count,
+  setCount,
+  totalPage,
+}: IPaginationProps) {
   function prevewCount() {
     if (count === 1) {
       setCount(1);
@@ -16,8 +20,8 @@ export default function Pagination({ count, setCount }: IPaginationProps) {
   }
 
   function nextCount() {
-    if (count === 42) {
-      setCount(42);
+    if (count === totalPage) {
+      setCount(totalPage);
     } else {
       setCount(count + 1);
     }
@@ -29,7 +33,7 @@ export default function Pagination({ count, setCount }: IPaginationProps) {
         <button
           onClick={prevewCount}
           disabled={count === 1}
-          className="bg-[#A8C700] disabled:bg-gray-400 w-[200px] h-[35px] hover:bg[#def84b] rounded-md text-[#474747] font-semibold"
+          className="bg-[#A8C700] disabled:bg-gray-400 w-[130px]  sm:w-[200px] h-[35px] hover:bg[#def84b] rounded-md text-[#474747] font-semibold"
         >
           Anterior
         </button>
@@ -38,8 +42,8 @@ export default function Pagination({ count, setCount }: IPaginationProps) {
         </button>
         <button
           onClick={nextCount}
-          disabled={count === 42}
-          className="bg-[#A8C700] disabled:bg-gray-400   w-[200px] h-[35px] rounded-md text-[#474747] font-semibold"
+          disabled={count === totalPage}
+          className="bg-[#A8C700] disabled:bg-gray-400 w-[130px]  sm:w-[200px] h-[35px] rounded-md text-[#474747] font-semibold"
         >
           Próximo
         </button>

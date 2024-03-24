@@ -2,17 +2,18 @@
 
 import Image from "next/image";
 import Search from "../assets/lupa.svg";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-export default function Input() {
-  const [search, setSearch] = useState("");
-  const router = useRouter();
-  function handleSearch() {
-    if (search !== "") {
-      router.push(`/search/?name=${search}`);
-    }
-  }
 
+interface IInterfaceProps {
+  search: string;
+  setSearch: (search: string) => void;
+  handleSearch: () => void;
+}
+
+export default function Input({
+  search,
+  setSearch,
+  handleSearch,
+}: IInterfaceProps) {
   return (
     <div>
       <div className="flex items-center justify-between gap-4  w-full h-[28px] border border-solid-[5px] border-black focus:outline-none focus:border-[#CFE071] rounded-[10px] px-5 py-5 ">
@@ -24,9 +25,9 @@ export default function Input() {
         />
         <div className="flex-shrink-0 ">
           <Image
-            onClick={handleSearch}
             src={Search}
             alt="search"
+            onClick={handleSearch}
             width={25}
             height={25}
             className="cursor-pointer hover:h-[30px]"

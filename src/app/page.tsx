@@ -11,11 +11,32 @@ import axios from "axios";
 export default function Home() {
   const [characters, setCharacters] = useState<CharacterProps[]>([]);
   const [count, setCount] = useState(1);
+  const [search, setSearch] = useState("");
+  const [totalPage, setTotalPage] = useState(1);
 
   function loadCharacters() {
+    let url = "";
+    if (search === "")
+      url = `https://rickandmortyapi.com/api/character?page=${count}`;
+    if (search !== "")
+      url = `https://rickandmortyapi.com/api/character?page=${count}&name=${search}`;
     axios
-      .get(`https://rickandmortyapi.com/api/character?page=${count}`)
-      .then((results) => setCharacters(results.data.results))
+      .get(url)
+      .then((results) => {
+        setCharacters(results.data.results);
+        setTotalPage(results.data.info.pages);
+      })
+      .catch((error) => console.log("Ocorreu um erro", error));
+  }
+
+  function handleSearch() {
+    axios
+      .get(`https://rickandmortyapi.com/api/character/?name=${search}`)
+      .then((results) => {
+        setCharacters(results.data.results);
+        console.log(results.data.info.pages);
+        setTotalPage(results.data.info.pages);
+      })
       .catch((error) => console.log("Ocorreu um erro", error));
   }
 
@@ -29,7 +50,11 @@ export default function Home() {
 
       <div className="w-full container mt-10">
         <div className="md:w-[573px] w-full">
-          <Input />
+          <Input
+            search={search}
+            setSearch={setSearch}
+            handleSearch={handleSearch}
+          />
         </div>
       </div>
 
@@ -40,7 +65,8 @@ export default function Home() {
           ))}
       </div>
 
-      <Pagination count={count} setCount={setCount} />
+      <Pagination count={count} setCount={setCount} totalPage={totalPage} />
+      <button onClick={() => alert(search)}>aasdasd</button>
     </main>
   );
 }
