@@ -66,7 +66,6 @@ export default function Home() {
       </div>
 
       <Pagination count={count} setCount={setCount} totalPage={totalPage} />
-      <button onClick={() => alert(search)}>aasdasd</button>
     </main>
   );
 }

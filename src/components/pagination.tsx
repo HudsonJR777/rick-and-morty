@@ -33,17 +33,17 @@ export default function Pagination({
         <button
           onClick={prevewCount}
           disabled={count === 1}
-          className="bg-[#A8C700] disabled:bg-gray-400 w-[130px]  sm:w-[200px] h-[35px] hover:bg[#def84b] rounded-md text-[#474747] font-semibold"
+          className="bg-[#A8C700] disabled:bg-gray-400 text-[20px] sm:text-[24px] py-3 px-5 hover:bg[#def84b] rounded-md text-[#474747] font-semibold"
         >
           Anterior
         </button>
-        <button className="bg-[#A8C700] w-[50px] h-[35px] rounded-md text-[#474747] font-semibold">
+        <button className="bg-[#A8C700]  text-[20px] sm:text-[24px] py-3 px-5  rounded-md text-[#474747] font-semibold">
           {count}
         </button>
         <button
           onClick={nextCount}
           disabled={count === totalPage}
-          className="bg-[#A8C700] disabled:bg-gray-400 w-[130px]  sm:w-[200px] h-[35px] rounded-md text-[#474747] font-semibold"
+          className="bg-[#A8C700] disabled:bg-gray-400 text-[20px] sm:text-[24px] py-3 px-5 rounded-md text-[#474747] font-semibold"
         >
           Próximo
         </button>
