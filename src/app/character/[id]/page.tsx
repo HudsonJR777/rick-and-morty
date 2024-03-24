@@ -1,7 +1,7 @@
 // "use client";
 
 // import { useEffect } from "react";
-import Location from "../../../assets/citadel.svg";
+import location from "../../../assets/citadel.svg";
 import Human from "../../../assets/human.svg";
 import Male from "../../../assets/male.svg";
 import Origin from "../../../assets/earth.svg";
@@ -39,7 +39,7 @@ export default async function CharacterId({ params }: any) {
       status: data.origin.name,
     },
     {
-      icon: Origin,
+      icon: location,
       label: "Location",
       status: data.location.name,
     },
@@ -58,20 +58,25 @@ export default async function CharacterId({ params }: any) {
   //   }, []);
 
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
       <div>
-        <div className="flex justify-end">
-          <div className="bg-[#404040] w-full h-[150px] xl4:w-[1267px] xl4:h-[242px] flex items-center px-[80px] ">
-            <Link href="/">
-              <Image src={Arrow} alt="arrwo" width={40} height={40} />
+        <div className="flex justify-end  flex-wrap sm:flex-nowrap ">
+          <div className="bg-[#404040] w-full h-[150px] xl4:h-[242px] flex gap-3 py-[24px] px-[28px] sm:items-center flex-col sm:flex-row   sm:px-[80px]  ">
+            <Link href="/" className="flex-shrink-0">
+              <Image
+                src={Arrow}
+                alt="voltar para home"
+                width={40}
+                height={40}
+              />
             </Link>
-            <h1 className="font-bold text-[30px] xl4:text-[60px]  text-white px-[100px]">
+            <h1 className="font-bold text-[30px] xl4:text-[60px]  text-white  sm:px-[100px]">
               {data.name}
             </h1>
           </div>
           <div>
             <Image
-              className="bg-green-800 w-[300px] h-[240px] xl4:w-[653px] xl4:h-[484px] object-cover"
+              className="bg-green-800 w-screen sm:w-[300px] h-[240px] xl4:w-[653px] xl4:h-[484px] object-cover"
               src={data.image}
               width={600}
               height={484}
@@ -85,7 +90,7 @@ export default async function CharacterId({ params }: any) {
         <div className="pt-[100px] pb-[90px] xl4:pt-[322px] xl4:pb-[318px]">
           <div className=" flex px-[228px]">
             <div
-              className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl1:grid-cols-5
+              className="grid grid-cols-1   sm:grid-cols-5
              justify-between gap-[80px] xl4:gap-[229.18px] "
             >
               {infoscharacters.map((character) => (
@@ -97,7 +102,7 @@ export default async function CharacterId({ params }: any) {
       </div>
 
       <div>
-        <h1 className="font-bold text-[40px] text-[#404040] px-[228px] pb-[60px]">
+        <h1 className="font-bold text-[28px] sm:text-[40px] text-[#404040] px-[28px] sm:px-[228px] sm:pb-[60px] ">
           Outros Personagems
         </h1>
       </div>

@@ -32,7 +32,7 @@ import Arrow from "../../assets/arrow-left.svg";
 export default function CharacterPage() {
   return (
     <div>
-      <div>
+      {/* <div>
         <div className="flex justify-end">
           <div className="bg-[#404040] w-[1050px] h-[150px] xl4:w-[1267px] xl4:h-[242px] flex items-center px-[80px] ">
             <Link href="/cards">
@@ -120,7 +120,7 @@ export default function CharacterPage() {
         </h1>
       </div>
 
-      <div></div>
+      <div></div> */}
     </div>
   );
 }

@@ -13,7 +13,7 @@ export function InfosCharacter({ character }: any) {
         />
       </div>
       <div className="mt-5">
-        <h5 className="font-bold text-[tomato] text-center text-[15px] xl4:text-[24px]">
+        <h5 className="font-bold text-[#A8C700] text-center text-[15px] xl4:text-[24px]">
           {character.label}
         </h5>
         <h6 className="font-bold text-[#727272] text-[19px] text-center xl4:text-[32px]">

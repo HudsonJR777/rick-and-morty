@@ -9,8 +9,8 @@ interface ICardProps {
 
 export default function Card({ character }: ICardProps) {
   return (
-    <div className="w-[320px] h-[280px] grid-cols-3 xl3:grid-cols-2 mb-[80px]  cursor-pointer rounded-md bg-[#F5F5F5] ">
-      <div className="flex flex-col rounded-lg  group h-[100px] bg-[#F5F5F5]">
+    <div className="w-[320px] h-[300px] grid-cols-4 xl3:grid-cols-2 mb-[90px]  cursor-pointer rounded-md bg-[#F5F5F5] ">
+      <div className="flex flex-col rounded-lg  group h-[100px] bg-[#F5F5F5] ">
         <Image
           className="w-full h-[200px] xl4:320 object-cover bg-no-repeat"
           src={character.image}

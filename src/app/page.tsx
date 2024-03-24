@@ -6,14 +6,14 @@ import { CharacterProps } from "../types/character";
 export default async function Home() {
   const res = await fetch("https:rickandmortyapi.com/api/character");
   const data = await res.json();
-  console.log(data.results[0]);
+
   return (
-    <main>
+    <main className="w-full overflow-x-hidden">
       <Banner />
 
-      <Input />
+      {/* <Input /> */}
 
-      <div className="flex justify-center flex-wrap gap-[40px] px-[120px] py-[245px] ">
+      <div className="xl:grid xl:grid-cols-4 flex  justify-center flex-wrap gap-[40px] px-0 py-10 xl:px-[120px] xl:py-[245px] ">
         {data.results.length > 0 &&
           data.results.map((item: CharacterProps) => (
             <Card key={item.id} character={item} />

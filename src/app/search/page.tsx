@@ -25,7 +25,7 @@ export default async function SearchPage({ searchParams }: any) {
           ))
         ) : (
           <div className="flex items-center justify-center w-full p-auto">
-            <h1 className="font-bold text-xl  text-[#CFE071]">
+            <h1 className="font-bold text-xl  text-[#A8C700]">
               Não encontramos esse personagem em nenhum universo
             </h1>
           </div>
